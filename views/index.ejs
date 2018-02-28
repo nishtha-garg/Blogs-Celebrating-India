@@ -1,0 +1,29 @@
+<% include partials/header %>
+<div class="container">
+    <h1> INDIAN FESTIVALS: </h1>
+    <div class="row text-justified" flex-wrap:"wrap">
+        <% blogs.forEach(function(blog){ %>
+        <div class="col-sm-6 col-md-6">
+            <div class="thumbnail">
+                <div class="caption">
+                    <h4><strong> <%= blog.title %> </strong></h4>
+                </div>
+                  <img class="img-responsive" src="<%= blog.image %>" width="100%" height="50px">
+
+            <p>
+            <%= blog.created.toDateString() %>
+            </p>
+            <p><%= blog.body.substring(0,500)%>...</p>
+            <a href="/blogs/<%=blog._id%>">Read More</a>
+
+            </div>
+        </div>
+
+
+
+        <% })%>
+    </div>
+    <a class="btn btn-primary btn-block" href="/" role="button">Go Back</a>
+
+</div>
+<% include partials/footer %>
